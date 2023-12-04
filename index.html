@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,200;1,400;1,500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Build Week 1 - Quality</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="/style.css">
+    <title>Welcome</title>
 </head>
+
 <body>
-    <!-- Il container principale -->
-    <div id="welcomeContainer" class="welcome-container">
-        <!-- Il container del logo di Epicode -->
-        <div>
+    <!-- Container -->
+    <div id="welcomeContainer" class="main-container">
+        <!-- Header -->
+        <header>
             <!-- Logo -->
-            <img id="logo-epicode" alt="logo_epicode" src="assets/epicode_logo.png">
-        </div>
+            <img id="logoEpicode" alt="logo_epicode" src="assets/epicode_logo.png">
+        </header>
         <!-- Main -->
         <main>
-            <!-- Main -->
+            <!-- Istructions -->
             <h1>Welcome to<br><b>your exam</b></h1>
             <section id="instructions">
                 <h2 id="instructionsTitle" class="purple">Instructions</h2>
@@ -37,23 +38,23 @@
                     <!-- Difficult Select -->
                     <h3 id="titleDifficulSelect"> Choose difficulty </h3>
                     <div class="select">
-                        <select id="selectDifficult" name="difficult" title="select">
+                        <select id="selectDifficult" name="difficult">
                             <option class="alignDifficulty" value=""></option>
                             <option class="alignDifficulty" value="easy">Easy</option>
                             <option class="alignDifficulty" value="Hard">Hard</option>
                         </select><br>
                     </div>
                     <!-- Checkbox terms -->
-                    <input type="checkbox" id="terms">
-                    <label id="labelCheckbox" for="checkbox">I promise to answer myself without help from anyone</label>
+                    <input type="checkbox" id="terms"><label id="labelCheckbox" for="checkbox">I promise to answer myself without help from anyone</label>
                 </div>
                 <!-- Button Proceed -->
                 <div id="boxButton">
-                    <a href=""><button id="proceedButton" type="button" class="offProceed">PROCEED</button></a>
+                    <a href="/pages/Questions/Questions.html"><button id="proceedButton" type="button" class="offProceed">PROCEED</button></a>
                 </div>
             </section>
         </main>
     </div>
-    <script src="js/script.js" type="module"></script>
+    <script src="/script.js"></script>
 </body>
+
 </html>
