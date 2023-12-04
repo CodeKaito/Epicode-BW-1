@@ -10,9 +10,50 @@
     <title>Build Week 1 - Quality</title>
 </head>
 <body>
-    Building Week 1
-    <br/>
-    Sei nel branch di test!
+    <!-- Il container principale -->
+    <div id="welcomeContainer" class="welcome-container">
+        <!-- Il container del logo di Epicode -->
+        <div>
+            <!-- Logo -->
+            <img id="logo-epicode" alt="logo_epicode" src="assets/images/epicode_logo.png">
+        </div>
+        <!-- Main -->
+        <main>
+            <!-- Istructions -->
+            <h1>Welcome to<br><b>your exam</b></h1>
+            <section id="instructions">
+                <h2 id="instructionsTitle" class="purple">Instructions</h2>
+                <p id="instructionsPar">We don't expect most engineers to know the answers to all of these<br>questions,
+                    so don't worry if you're unsure of a few of them</p>
+                <ul id="instructionList">
+                    <li>Each question is <b>time </b>and can only be <b>answered once.</b></li>
+                    <li>Changing browser tab or opening other windows will <b>invalidate the question.</b></li>
+                    <li>This exam will take approx. <b>0-5 minutes.</b></li>
+                </ul>
+            </section>
+            <!-- Bottom Box -->
+            <section id="bottomBox">
+                <div id="formCheck">
+                    <!-- Difficult Select -->
+                    <h3 id="titleDifficulSelect"> Choose difficulty </h3>
+                    <div class="select">
+                        <select id="selectDifficult" name="difficult" title="select">
+                            <option class="alignDifficulty" value=""></option>
+                            <option class="alignDifficulty" value="easy">Easy</option>
+                            <option class="alignDifficulty" value="Hard">Hard</option>
+                        </select><br>
+                    </div>
+                    <!-- Checkbox terms -->
+                    <input type="checkbox" id="terms">
+                    <label id="labelCheckbox" for="checkbox">I promise to answer myself without help from anyone</label>
+                </div>
+                <!-- Button Proceed -->
+                <div id="boxButton">
+                    <a href=""><button id="proceedButton" type="button" class="offProceed">PROCEED</button></a>
+                </div>
+            </section>
+        </main>
+    </div>
     <script src="assets/js/script.js" type="module"></script>
 </body>
 </html>

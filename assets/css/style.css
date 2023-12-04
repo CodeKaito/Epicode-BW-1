@@ -4,9 +4,21 @@
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+    background-image: url(../images/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: left;
+    color: white;
+    font-family: "Montserrat", sans-serif;
 }
+
+.welcome-container {
+    margin: 0 7%;
+    margin-top: 3%;
+}
+
+#logo-epicode {
+    width: 300px;
+  }
