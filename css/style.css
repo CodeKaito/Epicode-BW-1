@@ -5,7 +5,7 @@
 
 body {
     box-sizing: border-box;
-    background-image: url(../images/bg.jpg);
+    background-image: url(../assets/bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -20,5 +20,5 @@ body {
 }
 
 #logo-epicode {
-    width: 300px;
+    width: 200px;
   }
