@@ -64,7 +64,7 @@ const displayQuestion = () => {
 const selectAnswer = (selectedAnswer) => {
   submitAnswer = selectedAnswer;  // Imposta la risposta selezionata dall'utente
 };
-
+// timer
 // Modifica la tua funzione nextQuestion
 export const nextQuestion = () => {
     if (submitAnswer !== '') {
@@ -72,18 +72,6 @@ export const nextQuestion = () => {
         if (submitAnswer === randomData[pickQuestion].correct_answer) {
             punteggio++;  // Incrementa il punteggio se la risposta è corretta
         }
-  if (submitAnswer !== timer)
-  function timer(){
-    var sec = 30;
-    var timer = setInterval(function(){
-        document.getElementById('safeTimerDisplay').innerHTML='00:'+sec;
-        sec--;
-        if (sec < 0) {
-            clearInterval(timer);
-        }
-    }, 1000);
-}
-timer(pickQuestion++);
 
         pickQuestion++;  // Incrementa l'indice delle domande
   
