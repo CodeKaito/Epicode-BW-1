@@ -86,7 +86,7 @@ export const nextQuestion = () => {
                 }
             localStorage.setItem('punteggioFinale', punteggio); //creazione della local storage del punteggio finale
 
-            window.location.href = 'Result.html'; //passaggio alla schermata del risultato
+            window.location.href = '/pages/Result/Result.html'; //passaggio alla schermata del risultato
         }
   
     submitAnswer = '';  // Resetta la risposta selezionata
