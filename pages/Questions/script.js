@@ -64,7 +64,9 @@ const nextQuestion = () => {
     } else {
       console.log('Quiz completed. Final Score:', punteggio);  // Output del punteggio finale
       if (punteggio <= 7) {
-        console.log('Fai cacare anche in questi quiz');  // Output specifico per punteggi bassi
+        console.log("Ci dispiace, Non hai superato l'esame del modulo M2!");  // Output specifico per punteggi bassi
+      } else {
+        console.log("Hai superato l'esame del modulo M2! Congratulazioni!");
       }
     }
 
