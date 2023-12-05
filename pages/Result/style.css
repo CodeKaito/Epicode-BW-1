@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    background-image: url("https://github.com/CodeKaito/Epicode-BW-1/blob/test-branch/assets/bg.jpg?raw=true");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: left;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* contenitore principale di tutte le pagine */
+.main-container {
+  margin: 0 7%;
+  margin-top: 3%;
+}
+
+/* Logo di Epicode in alto a sinistra */
+#logoEpicode {
+  width: 20em;
+}
+
+/* elementi di colore purple */
+.purple {
+  color: #c2128d;
+}
+
+/* elementi bottone blu */
+.blueButton {
+  color: #232b5e;
+  background-color: #00ffff;
+  border: 1px solid #00ffff;
+  padding: 15px 70px;
+  font-size: 1.6em;
+  font-weight: bold;
+  cursor: pointer;
+  filter: drop-shadow(0 0 15px #00ffff) drop-shadow(0 0 50px #00ffff);
+}
+
+.blueButton:hover {
+  color: #232b5e;
+  background-color: #d20094;
+  filter: drop-shadow(0 0 20px #d20094);
+}
