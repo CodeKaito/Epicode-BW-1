@@ -9,7 +9,7 @@
 
 #welcomeContainer h1 {
   font-family: "Outfit", sans-serif;
-  font-size: 6em;
+  font-size: 60px;
   line-height: 0.8em;
   margin-top: 0.8em;
   margin-bottom: 0.5em;
@@ -19,14 +19,14 @@
 /* INSTRUCTIONS SECTION */
 
 #instructionsTitle {
-  font-size: 2.5em;
+  font-size: 30px;
   font-weight: 700;
   font-family: "Outfit", sans-serif;
   margin: 0;
 }
 
 #welcomeContainer p {
-  font-size: 1.4em;
+  font-size: 16px;
 }
 
 #welcomeContainer ul {
@@ -35,7 +35,8 @@
 
 #welcomeContainer li {
   line-height: 1.8em;
-  font-size: 1.4em;
+  font-size: 16px;
+  margin-left: 20px;
 }
 
 /* CHOOSE THE DIFFICULT */
