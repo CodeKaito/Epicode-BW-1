@@ -64,15 +64,15 @@ const displayQuestion = () => {
 const selectAnswer = (selectedAnswer) => {
   submitAnswer = selectedAnswer;  // Imposta la risposta selezionata dall'utente
 };
-
+// timer
 // Modifica la tua funzione nextQuestion
 export const nextQuestion = () => {
     if (submitAnswer !== '') {
-        actualQuestion++;  // Incrementa il numero della domanda
+        actualQuestion++; // Incrementa il numero della domanda
         if (submitAnswer === randomData[pickQuestion].correct_answer) {
             punteggio++;  // Incrementa il punteggio se la risposta è corretta
         }
-  
+
         pickQuestion++;  // Incrementa l'indice delle domande
   
         if (actualQuestion <= data.length) {
