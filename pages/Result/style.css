@@ -10,3 +10,9 @@
     margin-top: 3px;
     margin-left: 10px;
 }
+/* aggiunta piccola correzzione grafico a torta */
+#myChart {
+    padding: 2rem;
+    border: 1px solid white;
+    border-radius: 1rem;
+}
