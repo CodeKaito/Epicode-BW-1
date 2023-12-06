@@ -17,12 +17,12 @@ body {
 /* contenitore principale di tutte le pagine */
 .main-container {
   margin: 0 7%;
-  margin-top: 3%;
+  margin-top: 2%;
 }
 
 /* Logo di Epicode in alto a sinistra */
 #logoEpicode {
-  width: 20em;
+ height: 30px;
 }
 
 /* elementi di colore purple */
@@ -35,8 +35,8 @@ body {
   color: #232b5e;
   background-color: #00ffff;
   border: 1px solid #00ffff;
-  padding: 15px 70px;
-  font-size: 1.6em;
+  padding: 0.7em 3em;
+  font-size: 1.3em;
   font-weight: bold;
   cursor: pointer;
   filter: drop-shadow(0 0 15px #00ffff) drop-shadow(0 0 50px #00ffff);

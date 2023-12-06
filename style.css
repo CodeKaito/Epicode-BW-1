@@ -4,22 +4,22 @@
 }
   
 #logo-epicode {
-    width: 20em;
+    height: 30px;
 }
 
 #welcomeContainer h1 {
   font-family: "Outfit", sans-serif;
   font-size: 60px;
   line-height: 0.8em;
-  margin-top: 0.8em;
-  margin-bottom: 0.5em;
+  margin-top: 80px;
+  margin-bottom: 50px;
   font-weight: 400;
 }
 
 /* INSTRUCTIONS SECTION */
 
 #instructionsTitle {
-  font-size: 30px;
+  font-size: 27px;
   font-weight: 700;
   font-family: "Outfit", sans-serif;
   margin: 0;
@@ -27,6 +27,7 @@
 
 #welcomeContainer p {
   font-size: 16px;
+  margin-top: 10px;
 }
 
 #welcomeContainer ul {
@@ -36,30 +37,33 @@
 #welcomeContainer li {
   line-height: 1.8em;
   font-size: 16px;
-  margin-left: 20px;
+  margin-left: 25px;
 }
 
 /* CHOOSE THE DIFFICULT */
 
 #titleDifficulSelect {
   margin: 0;
+  font-size: 16px;
 }
 
 select {
   border: 0;
   flex: 1;
   cursor: pointer;
-}
+ }
 
 .alignDifficulty {
   text-align: center;
+  
 }
 
 #selectDifficult {
-  font-size: 1.2em;
+  font-size: 16px;
   background: linear-gradient(122deg, rgb(27, 22, 92) 23%, rgba(108, 40, 117, 1) 50%, rgb(24, 31, 82) 72%);
   background-color: #0C113B;
   color: white;
+  
 }
 
 /* Rimuove impostazioni predefinite */
@@ -71,8 +75,8 @@ select::-ms-expand {
 .select {
   position: relative;
   display: flex;
-  width: 10em;
-  height: 2em;
+  width: 8em;
+  height: 1.4em;
   border-radius: 0.25em;
   overflow: hidden;
 }
@@ -83,7 +87,7 @@ select::-ms-expand {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 5%;
+  padding: 1.5%;
   background-color: #131a59;
   pointer-events: none;
 }
@@ -96,6 +100,7 @@ select::-ms-expand {
 /* Checkbox dei termini */
 #labelCheckbox {
   margin-left: 2.8em;
+  font-size: 16px;
 }
 
 #formCheck {
@@ -107,8 +112,8 @@ select::-ms-expand {
 
 input[type="checkbox"] {
   appearance: none;
-  width: 2em;
-  height: 2em;
+  width: 1.5em;
+  height: 1.5em;
   border: 0.15em solid white;
   border-radius: 0.15em;
   transform: translateY(2em ) translateX(-0.15em);
@@ -137,7 +142,7 @@ input[type="checkbox"]:checked::before {
 
 #boxButton {
   display: inline-block;
-  margin-left: 40%;
+  margin-left: 50%;
 }
 
 .offProceed {
@@ -146,5 +151,5 @@ input[type="checkbox"]:checked::before {
   padding: 0.7em 3em;
   font-weight: bold;
   font-size: 1.3em;
-  border: solid 2px white;
+  border: solid 1px white;
 }
