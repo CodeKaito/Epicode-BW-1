@@ -6,13 +6,14 @@ const question = document.getElementById('question');  // Ottieni l'elemento con
 const answers = document.getElementById('answers');  // Ottieni l'elemento con id 'answers'
 const btnNext = document.getElementById('nextButton');  // Ottieni l'elemento con id 'nextButton'
 document.getElementById('questionLength').innerHTML = data.length;  // Imposta il contenuto dell'elemento con id 'questionLength' con la lunghezza dei dati
+const timer = document.getElementById('timer');
 
 // ---------------------- VARIABILI GLOBALI ----------------------
 let punteggio = 0;  // Punteggio inizializzato a 0
 let actualQuestion = 1;  // Inizializza la variabile per tener conto delle domande
 let pickQuestion = 0;  // Indice delle domande
 let submitAnswer = '';  // Contiene la risposta selezionata dall'utente
-let exportScore = 0; // Inizializzo una variabile per esportare il valore del punteggio
+const timeout = 60000; // Il timeout di ogni domanda é di 60 secondi
 
 // ---------------------- RANDOMIZZA LE DOMANDE NEL DOM ----------------------
 const randomArray = (arr) => {
@@ -26,7 +27,7 @@ const randomArray = (arr) => {
 // ---------------------- ASSOCIA LA FUNZIONE RANDOMIZEARRAY ----------------------
 let randomData = randomArray(data);  // Ottieni un array di dati randomizzato
 
-// ---------------------- FUNZIONE PRINCIPLAE ----------------------
+// ---------------------- FUNZIONE PRINCIPALE ----------------------
 const displayQuestion = () => {
     const currentQuestion = randomData[pickQuestion];  // Ottieni la domanda corrente
 
@@ -54,8 +55,14 @@ const displayQuestion = () => {
         option.classList.add('btnAnswer');
         // Imposta il testo del button con la risposta
         option.innerHTML = answer;
+
+        timer.innerHTML = '60';
         // Aggiungi un listener per gestire il click sulla risposta
-        option.addEventListener('click', () => selectAnswer(answer));
+        option.addEventListener('click', () => {
+        //     clearTimeout(currentTimerId);
+            selectAnswer(answer);
+        });
+        
     // Restituisci il pulsante creato
     return option;
     }
@@ -91,10 +98,27 @@ export const nextQuestion = () => {
   
     submitAnswer = '';  // Resetta la risposta selezionata
 
+    } else if (submitAnswer === '') {
+    // Seleziona automaticamente una risposta (o gestisci diversamente la mancanza di risposta)
+    // E vai direttamente alla logica successiva
+    actualQuestion++;
+    pickQuestion++;
+
+    if (actualQuestion <= data.length) {
+        displayQuestion();
     } else {
-      alert('Seleziona una risposta prima di passare alla domanda successiva');  // Avviso se non è stata selezionata una risposta
+        console.log('Quiz completed. Final Score:', punteggio);
+        if (punteggio < 7) {
+            console.log("Ci dispiace, Non hai superato l'esame del modulo M2!");
+        } else {
+            console.log("Hai superato l'esame del modulo M2! Congratulazioni!");
+        }
+        localStorage.setItem('punteggioFinale', punteggio);
+
+        window.location.href = '/pages/Result/Result.html';
     }
-  };
+}
+};
 
 btnNext.addEventListener('click', nextQuestion);  // Aggiungi un listener per gestire il click sul button 'Next'
 
