@@ -13,6 +13,7 @@ let punteggio = 0;  // Punteggio inizializzato a 0
 let actualQuestion = 1;  // Inizializza la variabile per tener conto delle domande
 let pickQuestion = 0;  // Indice delle domande
 let submitAnswer = '';  // Contiene la risposta selezionata dall'utente
+let timerDisplay = 60000;
 
 // ---------------------- RANDOMIZZA LE DOMANDE NEL DOM ----------------------
 const randomArray = (arr) => {
@@ -23,15 +24,39 @@ const randomArray = (arr) => {
   return arr;
 };
 
-// let timeOutQuestions = setInterval(() => {
-//     // Your code to be executed at each interval goes here
-//     console.log("Executing code at each 3 Seconds interval");
-
-//     nextQuestion();
-// }, 5000);
-
 // ---------------------- ASSOCIA LA FUNZIONE RANDOMIZEARRAY ----------------------
 let randomData = randomArray(data);  // Ottieni un array di dati randomizzato
+
+const updateTimer = () => {
+    timerDisplay--;
+
+    // Display in seconds with two digits
+    timer.innerHTML = timerDisplay < 10 ? `0${timerDisplay}` : timerDisplay;
+
+    if (timerDisplay <= 0) {
+        clearInterval(timerInterval);
+        nextQuestion();
+    }
+};
+
+let timerInterval; // Variable to store the interval reference
+
+// Function to start the timer
+const startTimer = () => {
+    timerDisplay = 60; // Reset the timer display to 60 seconds
+    timer.innerHTML = timerDisplay; // Display initial value
+    timerInterval = setInterval(updateTimer, 1000); // Update timer every second
+};
+
+// Function to stop the timer
+const stopTimer = () => {
+    clearInterval(timerInterval);
+};
+
+const resetTimer = () => {
+    clearInterval(timerInterval);
+    timer.innerHTML = '60'; // Reset the timer display
+};
 
 // ---------------------- FUNZIONE PRINCIPALE ----------------------
 const displayQuestion = () => {
@@ -45,6 +70,8 @@ const displayQuestion = () => {
     const allAnswers = [currentQuestion.correct_answer, ...currentQuestion.incorrect_answers];  // Crea un array con tutte le risposte
     const randomAnswers = randomArray(allAnswers);  // Randomizza l'array delle risposte
 
+    startTimer(); // Start the timer when displaying a new question
+
     // Itera attraverso le risposte randomizzate
     for (const answer of randomAnswers) {
         // Crea un pulsante per la risposta corrente
@@ -53,6 +80,11 @@ const displayQuestion = () => {
         answers.appendChild(option);
     }
 
+    setTimeout(() => {
+        stopTimer();
+        nextQuestion();
+    }, timerDisplay * 1000);
+    
     // Funzione per creare un pulsante di risposta
     function createAnswerButton(answer) {
         // Crea un elemento button
@@ -61,11 +93,11 @@ const displayQuestion = () => {
         option.classList.add('btnAnswer');
         // Imposta il testo del button con la risposta
         option.innerHTML = answer;
-
-        timer.innerHTML = '60';
+        
         // Aggiungi un listener per gestire il click sulla risposta
         option.addEventListener('click', () => {
             selectAnswer(answer);
+            clearInterval(timeOutQuestions); // clear the interval after displaying the next question
         });
         
     // Restituisci il pulsante creato
@@ -79,6 +111,7 @@ const selectAnswer = (selectedAnswer) => {
 // timer
 // Modifica la tua funzione nextQuestion
 const nextQuestion = () => {
+    resetTimer();
         actualQuestion++; // Incrementa il numero della domanda
         if (submitAnswer === randomData[pickQuestion].correct_answer) {
             punteggio++;  // Incrementa il punteggio se la risposta è corretta
