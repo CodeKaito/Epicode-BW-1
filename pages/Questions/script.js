@@ -30,7 +30,7 @@ let randomData = randomArray(data);  // Ottieni un array di dati randomizzato
 const updateTimer = () => {
     timerDisplay--;
 
-    // Display in seconds with two digits
+    // Display dei secondi
     timer.innerHTML = timerDisplay < 10 ? `0${timerDisplay}` : timerDisplay;
 
     if (timerDisplay <= 0) {
@@ -39,23 +39,24 @@ const updateTimer = () => {
     }
 };
 
-let timerInterval; // Variable to store the interval reference
+let timerInterval; // Variabile che store gli intervalli
 
-// Function to start the timer
+// Start del timer
 const startTimer = () => {
-    timerDisplay = 60; // Reset the timer display to 60 seconds
-    timer.innerHTML = timerDisplay; // Display initial value
-    timerInterval = setInterval(updateTimer, 1000); // Update timer every second
+    timerDisplay = 60; // Resetto il timer a 60
+    timer.innerHTML = timerDisplay; // Mostro il valore iniziale di 60
+    timerInterval = setInterval(updateTimer, 1000); // Faccio l'update del valore ogni secondo
 };
 
-// Function to stop the timer
+// Stoppo il timer
 const stopTimer = () => {
     clearInterval(timerInterval);
 };
 
+// Resetto il timer
 const resetTimer = () => {
     clearInterval(timerInterval);
-    timer.innerHTML = '60'; // Reset the timer display
+    timer.innerHTML = '60'; // Resetto il display 
 };
 
 // ---------------------- FUNZIONE PRINCIPALE ----------------------
@@ -70,7 +71,7 @@ const displayQuestion = () => {
     const allAnswers = [currentQuestion.correct_answer, ...currentQuestion.incorrect_answers];  // Crea un array con tutte le risposte
     const randomAnswers = randomArray(allAnswers);  // Randomizza l'array delle risposte
 
-    startTimer(); // Start the timer when displaying a new question
+    startTimer(); // Starto il timer ogni nuova domanda
 
     // Itera attraverso le risposte randomizzate
     for (const answer of randomAnswers) {
@@ -108,10 +109,10 @@ const displayQuestion = () => {
 const selectAnswer = (selectedAnswer) => {
   submitAnswer = selectedAnswer;  // Imposta la risposta selezionata dall'utente
 };
-// timer
+
 // Modifica la tua funzione nextQuestion
 const nextQuestion = () => {
-    resetTimer();
+    resetTimer(); // Resetto il timer ad ogni nuova domanda
         actualQuestion++; // Incrementa il numero della domanda
         if (submitAnswer === randomData[pickQuestion].correct_answer) {
             punteggio++;  // Incrementa il punteggio se la risposta è corretta
