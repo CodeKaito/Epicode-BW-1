@@ -13,7 +13,6 @@ let punteggio = 0;  // Punteggio inizializzato a 0
 let actualQuestion = 1;  // Inizializza la variabile per tener conto delle domande
 let pickQuestion = 0;  // Indice delle domande
 let submitAnswer = '';  // Contiene la risposta selezionata dall'utente
-const timeout = 60000; // Il timeout di ogni domanda é di 60 secondi
 
 // ---------------------- RANDOMIZZA LE DOMANDE NEL DOM ----------------------
 const randomArray = (arr) => {
@@ -23,6 +22,13 @@ const randomArray = (arr) => {
   }
   return arr;
 };
+
+// let timeOutQuestions = setInterval(() => {
+//     // Your code to be executed at each interval goes here
+//     console.log("Executing code at each 3 Seconds interval");
+
+//     nextQuestion();
+// }, 5000);
 
 // ---------------------- ASSOCIA LA FUNZIONE RANDOMIZEARRAY ----------------------
 let randomData = randomArray(data);  // Ottieni un array di dati randomizzato
@@ -59,7 +65,6 @@ const displayQuestion = () => {
         timer.innerHTML = '60';
         // Aggiungi un listener per gestire il click sulla risposta
         option.addEventListener('click', () => {
-        //     clearTimeout(currentTimerId);
             selectAnswer(answer);
         });
         
@@ -73,8 +78,7 @@ const selectAnswer = (selectedAnswer) => {
 };
 // timer
 // Modifica la tua funzione nextQuestion
-export const nextQuestion = () => {
-    if (submitAnswer !== '') {
+const nextQuestion = () => {
         actualQuestion++; // Incrementa il numero della domanda
         if (submitAnswer === randomData[pickQuestion].correct_answer) {
             punteggio++;  // Incrementa il punteggio se la risposta è corretta
@@ -97,27 +101,6 @@ export const nextQuestion = () => {
         }
   
     submitAnswer = '';  // Resetta la risposta selezionata
-
-    } else if (submitAnswer === '') {
-    // Seleziona automaticamente una risposta (o gestisci diversamente la mancanza di risposta)
-    // E vai direttamente alla logica successiva
-    actualQuestion++;
-    pickQuestion++;
-
-    if (actualQuestion <= data.length) {
-        displayQuestion();
-    } else {
-        console.log('Quiz completed. Final Score:', punteggio);
-        if (punteggio < 7) {
-            console.log("Ci dispiace, Non hai superato l'esame del modulo M2!");
-        } else {
-            console.log("Hai superato l'esame del modulo M2! Congratulazioni!");
-        }
-        localStorage.setItem('punteggioFinale', punteggio);
-
-        window.location.href = '/pages/Result/Result.html';
-    }
-}
 };
 
 btnNext.addEventListener('click', nextQuestion);  // Aggiungi un listener per gestire il click sul button 'Next'
