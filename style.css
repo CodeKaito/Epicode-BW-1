@@ -1,0 +1,156 @@
+.welcome-container {
+    margin: 0 7%;
+    margin-top: 3%;
+}
+  
+#logo-epicode {
+    height: 30px;
+}
+
+#welcomeContainer h1 {
+  font-family: "Outfit", sans-serif;
+  font-size: 60px;
+  line-height: 0.8em;
+  margin-top: 80px;
+  margin-bottom: 50px;
+  font-weight: 400;
+}
+
+/* INSTRUCTIONS SECTION */
+
+#instructionsTitle {
+  font-size: 27px;
+  font-weight: 700;
+  font-family: "Outfit", sans-serif;
+  margin: 0;
+}
+
+#welcomeContainer p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+#welcomeContainer ul {
+  margin: 3em 0 7em 0;
+}
+
+#welcomeContainer li {
+  line-height: 1.8em;
+  font-size: 16px;
+  margin-left: 25px;
+}
+
+/* CHOOSE THE DIFFICULT */
+
+#titleDifficulSelect {
+  margin: 0;
+  font-size: 16px;
+}
+
+select {
+  border: 0;
+  flex: 1;
+  cursor: pointer;
+ }
+
+.alignDifficulty {
+  text-align: center;
+  
+}
+
+#selectDifficult {
+  font-size: 16px;
+  background: linear-gradient(122deg, rgb(27, 22, 92) 23%, rgba(108, 40, 117, 1) 50%, rgb(24, 31, 82) 72%);
+  background-color: #0C113B;
+  color: white;
+  
+}
+
+/* Rimuove impostazioni predefinite */
+select::-ms-expand {
+  display: none;
+}
+
+/* Personalizzazione della select */
+.select {
+  position: relative;
+  display: flex;
+  width: 8em;
+  height: 1.4em;
+  border-radius: 0.25em;
+  overflow: hidden;
+}
+
+/* Freccia della select stilizzata */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1.5%;
+  background-color: #131a59;
+  pointer-events: none;
+}
+
+/* Transizione freccia */
+.select:hover::after {
+  color: #1234f3;
+}
+
+/* Checkbox dei termini */
+#labelCheckbox {
+  margin-left: 2.8em;
+  font-size: 16px;
+}
+
+#formCheck {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1.1em;
+  margin-bottom: 3em;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 1.5em;
+  height: 1.5em;
+  border: 0.15em solid white;
+  border-radius: 0.15em;
+  transform: translateY(2em ) translateX(-0.15em);
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  width: 1.1em;
+  height: 1em;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--form-control-color);
+  background-color:  #d20094;
+}
+
+input[type="checkbox"]:checked::before {
+  transform: scale(1);
+}
+
+#bottomBox{
+  margin-bottom: 3em;
+  display: flex;
+}
+
+#boxButton {
+  display: inline-block;
+  margin-left: 50%;
+}
+
+.offProceed {
+  color: white;
+  background-color: transparent;
+  padding: 0.7em 3em;
+  font-weight: bold;
+  font-size: 1.3em;
+  border: solid 1px white;
+}
