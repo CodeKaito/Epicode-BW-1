@@ -14,4 +14,3 @@ let actualQuestion = 1; // Inizializzo una variabile per tener conto delle doman
 let pickQuestion = 0; // Indice delle domande
 let arrayRand; // Variabile che accoglie l'array domande randomizzato da randomizeArray
 let submitAnswer = ''; // Contiene di volta in volta la risposta inserita dall'utente
-
