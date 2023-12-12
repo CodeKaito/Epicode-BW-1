@@ -1,0 +1,18 @@
+#visibleResult {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    top: 20em;
+}
+
+#result {
+    font-size: 30px;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+/* aggiunta piccola correzzione grafico a torta */
+#myChart {
+    padding: 2rem;
+    border: 1px solid white;
+    border-radius: 1rem;
+}
